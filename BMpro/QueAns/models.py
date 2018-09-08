@@ -8,7 +8,7 @@ class QuesModel(models.Model):
         ('ING','ING'),
     )
     stmt  = models.CharField(max_length=50)
-    qtype = models.CharField(max_length=5,choices=QTYPE,default='MCQ')
+    qtype = models.ChoiceField(max_length=5,choices=QTYPE,default='MCQ')
 
     def __str__(self):
         return self.stmt
