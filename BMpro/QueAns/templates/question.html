@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>index page</title>
+  </head>
+  <body>
+    <h2>{{question.q}}</h2>
+    {% if question.q.qtype == 'MCQ' %}
+      <ol>
+        <li>{{question.option1}}</li>
+        <li>{{question.option2}}</li>
+        <li>{{question.option3}}</li>
+        <li>{{question.option4}}</li>
+      </ol>
+    {% endif %}
+    <form method='POST'>
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value='Submit'>
+    </form>
+
+  </body>
+</html>
